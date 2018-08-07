@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+     <!-- 数据库驱动包位置 -->
+     <classPathEntry location="C:\Users\JerryLu\.m2\repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar" /> 
+     <context id="DB2Tables" targetRuntime="MyBatis3">
+         <commentGenerator>
+             <property name="suppressAllComments" value="true" />
+         </commentGenerator>
+         <!-- 数据库链接URL、用户名、密码 -->
+          <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.201:3306/robot" userId="root" password="123456"> 
+         </jdbcConnection>
+         <javaTypeResolver>
+             <property name="forceBigDecimals" value="false" />
+         </javaTypeResolver>
+         <!-- 生成实体类的包名和位置，这里配置将生成的实体类放在com.huayunworld.robot.web.conf.domain这个包下 -->
+         <javaModelGenerator targetPackage="com.huayunworld.robot.web.conf.model.db" targetProject="./src/main/java">
+             <property name="enableSubPackages" value="true" />
+             <property name="trimStrings" value="true" />
+         </javaModelGenerator>
+         
+         <!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在com.huayunworld.robot.web.conf.mapping这个包下 -->
+         <sqlMapGenerator targetPackage="com.huayunworld.robot.web.conf.mapping" targetProject="./src/main/java">
+             <property name="enableSubPackages" value="true" />
+         </sqlMapGenerator>
+         <!-- 生成DAO的包名和位置，这里配置将生成的dao类放在com.huayunworld.robot.web.conf.mapping这个包下 -->
+         <javaClientGenerator type="XMLMAPPER" targetPackage="com.huayunworld.robot.web.conf.dao" targetProject="./src/main/java">
+             <property name="enableSubPackages" value="true" />
+         </javaClientGenerator>
+         
+         
+         <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+        <!-- <table tableName="RBC_ATTR" domainObjectName="Attr" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_DIM_CHANNEL" domainObjectName="DimChannel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_PATTER" domainObjectName="Patter" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_PATTER_INTENTION" domainObjectName="PatterIntention" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_PATTER_INTENTION_WORD" domainObjectName="PatterIntentionWord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_PATTER_TYPE" domainObjectName="PatterType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_PATTER_VARIATE" domainObjectName="PatterVariate" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_PATTER_VIDEO" domainObjectName="PatterVideo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_ROBOT" domainObjectName="Robot" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_ROBOT_SCENE_REL" domainObjectName="RobotSceneRel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SCENE" domainObjectName="Scene" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SCENE_INTENTION_REL" domainObjectName="SceneIntentionRel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SCENE_PATTER_NODE" domainObjectName="ScenePatterNode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SLOT_CLARIFY" domainObjectName="SlotClarify" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SLOT_DICT" domainObjectName="SlotDict" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SLOT_WORD" domainObjectName="SlotWord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SYS" domainObjectName="Sys" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SYS_CONF" domainObjectName="SysConf" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="RBC_SYS_DICT" domainObjectName="SysDict" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" /> -->
+        <table tableName="RBC_SLOT_DICT" domainObjectName="SlotDict" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"     enableSelectByExample="false" selectByExampleQueryId="false" />
+        
+         
+         
+     </context>
+</generatorConfiguration>

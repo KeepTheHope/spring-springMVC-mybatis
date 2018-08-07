@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
+<body>
+<style>
+#intention{
+    width: auto;
+    height: 100px;
+    overflow: scroll;
+}
+.box{
+	min-width:20px;
+	height: 25px;
+	border-radius: 10px;
+	background-color: #f3f3f3;
+	display: inline-block;
+	padding: 2px 5px;
+	position: relative;
+	float: left;
+}
+ .box>.img{
+	position: absolute;
+	top: 0;
+	right: 2px;
+	visibility: hidden;
+	height: 25px;
+	width: 28px;
+} 
+</style>
+
+<!-- <div class = "test">
+	<div class="box">
+		aaaaaaaaaa.mp3
+		<img class="img" src="start.png" status="0"></img>
+	</div>
+	<div class="box">
+		aaaaaaaaaa.mp3
+		<img class="img" src="start.png" status="0"></img>
+	</div>
+	<div class="box">
+		aaaaaaaaaa.mp3
+		<img class="img" src="start.png" status="0"></img>
+	</div>
+
+</div> -->
+<!-- <div>
+   <div id = "intention">
+     eeeeee
+   </div>
+<div> -->
+<button type="button" id = "wei" >an</button>
+
+<div contenteditable="true" id = "hong" style = "border: 1px solid #f3f3f3;">
+    chao
+    <span>wei</span>
+    hong
+    <span>haha</span>
+</div>
+
+<span style = "border:1px solid #99CCFF; height:100px; width:auto">
+
+<p>请仅仅把标题标签用于标题文本。不要仅仅为了产生粗体文本而使用它们。请使用其它标签或 CSS 代替。</p>
+
+</span>
+</body>
+<script type="text/javascript">
+var num = RandomTen();
+alert(num);
+/* var num = RandomSIX();
+alert(num); */
+$(function(){
+	/* $(".box,.img").mouseover(function(){
+		$(this).find(".img").css("visibility", "visible");
+	});
+	$(".box,.img").mouseout(function(){
+		if($(this).find(".img").attr("status") == "0"){
+			$(this).find(".img").css("visibility", "hidden");
+		}
+	});
+	
+	$("#intention").mousedown(function(e){ 
+          if(3 == e.which){ 
+               var id = $(this).attr("id");
+               var str = getWords();
+               alert(str);
+          }else if(1 == e.which){ 
+        	  
+          } 
+    }); */
+
+	/* $("#intention").mouseup(function(){
+		var str = getWords();
+	}); */
+	$("#wei").click(function(){
+		/* var str = $("#hong").contents().filter(function (index, content) {
+			
+		    return content.nodeType === 3;
+		}).text(); */
+		debugger;
+		var content = $("#hong").contents();
+		alert($(content[0]).text());
+	});
+});
+//获取选中的值
+function getWords(){ 
+	debugger;
+    var text; 
+    if(navigator.appName=="Microsoft Internet Explorer"){ 
+        text=document.selection.createRange().text; 
+    }else{ 
+        text=window.getSelection(); 
+    } 
+    return text;
+}
+function RandomSIX(){
+	var Num=""; 
+	for(var i=0;i<6;i++) 
+	{ 
+	Num+=Math.floor(Math.random()*10); 
+	} 
+	alert(Num);
+	return number;
+}
+//生成6为随机数
+function RandomTen(){
+	var Num=""; 
+	for(var i=0;i<10;i++) 
+	{ 
+	Num+=Math.floor(Math.random()*10); 
+	} 
+	return Num;
+}
+</script>
+
+</html>
